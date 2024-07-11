@@ -41,11 +41,22 @@ some basic types like mealy and moore and some complex types like harel and uml 
 
 ### directory structure
 
-```
+```text
+--- --- system verilog modules - simulated with -g2012 in iverilog
 --- sqd{sequence}meno.sv - non overlapping sequence detector of {sequence} as mealy state machine
 --- sqd{sequence}mono.sv - non overlapping sequence detector of {sequence} as moore state machine
 --- sqd{sequence}me.sv - overlapping sequence detector of {sequence} as mealy state machine
 --- sqd{sequence}mo.sv - overlapping sequence detector of {sequence} as moore state machine
+
+--- --- legacy verilog modules - simulated without g flag (-g2005)
+--- sqd{sequence}meno.v - non overlapping sequence detector of {sequence} as mealy state machine
+--- sqd{sequence}mono.v - non overlapping sequence detector of {sequence} as moore state machine
+--- sqd{sequence}me.v - overlapping sequence detector of {sequence} as mealy state machine
+--- sqd{sequence}mo.v - overlapping sequence detector of {sequence} as moore state machine
+
+--- --- testing files
+--- uvm*.sv - trying out uvm style test bench : wip
+--- *.sv    - accompanying modules
 ```
 
 ### sequence detectors
@@ -63,3 +74,4 @@ as analysing the code and drawing state diagrams are relatively easier
 2. https://vlsiverify.com/verilog/fsm-and-sequence-detector/
 3. https://scholarbasta.com/what-is-fsm-write-mealy-and-moore-state-machine-using-verilog/
 4. https://circuitcove.com/design-examples-fsm/
+5. https://yue-guo.com/2019/03/19/sequence-detector-1010-moore-machine-mealy-machine-overlapping-non-overlapping/
